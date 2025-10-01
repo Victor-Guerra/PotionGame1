@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://dhtle1iuaqff5"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_bwu14"]
+[ext_resource type="Texture2D" uid="uid://53tbn24a6y5d" path="res://assets/sprites/ingredient_sprites/shitty_crystal.png" id="2_hftc3"]
+
+[resource]
+script = ExtResource("1_bwu14")
+ingredient_name = "White Vitriol"
+ingredient_type = 3
+base_potency = 0.6
+base_value = 16
+base_stability = 2.0
+effects = Array[int]([17, 0, 27])
+rarity = 1
+sprite_texture = ExtResource("2_hftc3")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

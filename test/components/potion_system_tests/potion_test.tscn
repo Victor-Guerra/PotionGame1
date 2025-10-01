@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3hffrs8tuf8n"]
+
+[ext_resource type="Script" uid="uid://clipkhg5edl6g" path="res://test/components/potion_system_tests/potion_test.gd" id="1_epxnf"]
+[ext_resource type="Resource" uid="uid://27u8ekkmafaj" path="res://resources/IngredientList.tres" id="2_mxvsd"]
+
+[node name="PotionTest" type="Node2D"]
+script = ExtResource("1_epxnf")
+ingredient_list = ExtResource("2_mxvsd")

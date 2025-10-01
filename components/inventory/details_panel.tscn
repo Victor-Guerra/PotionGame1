@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://ryseorry45hw"]
+
+[ext_resource type="Theme" uid="uid://dvbu2tpf5xrsi" path="res://assets/themes/UIInventoryDetailsPanelThemeBody.tres" id="1_121na"]
+[ext_resource type="Texture2D" uid="uid://sf5j11jd21t4" path="res://assets/sprites/inventory_slot.png" id="1_gdj83"]
+[ext_resource type="Script" uid="uid://dwudhnpff3iom" path="res://components/inventory/details_panel.gd" id="2_mcu5n"]
+[ext_resource type="Theme" uid="uid://1sotqrg2hncl" path="res://assets/themes/UIInventoryDetailsPanelThemeTitle.tres" id="4_12sg6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8l1h"]
+atlas = ExtResource("1_gdj83")
+
+[node name="DetailsPanel" type="TextureRect"]
+texture_filter = 1
+size_flags_vertical = 0
+theme = ExtResource("1_121na")
+texture = SubResource("AtlasTexture_q8l1h")
+script = ExtResource("2_mcu5n")
+
+[node name="h1" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="v1" type="VBoxContainer" parent="h1"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="IngredientNameLabel" type="RichTextLabel" parent="h1/v1"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("4_12sg6")
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Details" type="HBoxContainer" parent="h1/v1"]
+layout_mode = 2
+
+[node name="TypeLabel" type="RichTextLabel" parent="h1/v1/Details"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0
+
+[node name="Separator" type="Label" parent="h1/v1/Details"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RarityLabel" type="RichTextLabel" parent="h1/v1/Details"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0
+
+[node name="Separator2" type="Label" parent="h1/v1/Details"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ValueLabel" type="RichTextLabel" parent="h1/v1/Details"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0
+
+[node name="Effects" type="HBoxContainer" parent="h1/v1"]
+layout_mode = 2
+theme = ExtResource("1_121na")
+
+[node name="Effect1" type="RichTextLabel" parent="h1/v1/Effects"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0
+
+[node name="VSeparator" type="VSeparator" parent="h1/v1/Effects"]
+layout_mode = 2
+
+[node name="Effect2" type="RichTextLabel" parent="h1/v1/Effects"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0
+
+[node name="VSeparator2" type="VSeparator" parent="h1/v1/Effects"]
+layout_mode = 2
+
+[node name="Effect3" type="RichTextLabel" parent="h1/v1/Effects"]
+layout_mode = 2
+fit_content = true
+autowrap_mode = 0

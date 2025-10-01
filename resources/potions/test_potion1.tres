@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PotionDetails" load_steps=5 format=3 uid="uid://dxb87i6i3h5rb"]
+
+[ext_resource type="Resource" uid="uid://x2cujvddigp5" path="res://resources/ingredient_types/dogsbane.tres" id="1_2lqgd"]
+[ext_resource type="Script" uid="uid://dj3r0bar68vjf" path="res://components/potion/PotionDetails.gd" id="1_m31y6"]
+[ext_resource type="Resource" uid="uid://bj8pe6sy3vy66" path="res://resources/ingredient_types/plant2.tres" id="2_jxawq"]
+[ext_resource type="Resource" uid="uid://dbwo32rnbv11x" path="res://resources/ingredient_types/mineral1.tres" id="3_78trd"]
+
+[resource]
+script = ExtResource("1_m31y6")
+i1 = ExtResource("1_2lqgd")
+i2 = ExtResource("2_jxawq")
+i3 = ExtResource("3_78trd")
+metadata/_custom_type_script = "uid://dj3r0bar68vjf"

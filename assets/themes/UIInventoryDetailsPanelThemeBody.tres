@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dvbu2tpf5xrsi"]
+
+[ext_resource type="FontFile" uid="uid://bs5qdcm2rovnm" path="res://assets/fonts/Not Jam UI 15.ttf" id="1_clia4"]
+
+[resource]
+RichTextLabel/font_sizes/bold_font_size = 32
+RichTextLabel/font_sizes/normal_font_size = 24
+RichTextLabel/fonts/normal_font = ExtResource("1_clia4")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://dkqbkoyorwqrl"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_g8jfj"]
+[ext_resource type="Texture2D" uid="uid://chr1283xsbyvn" path="res://icon.svg" id="2_xxovk"]
+
+[resource]
+script = ExtResource("1_g8jfj")
+ingredient_name = "Default"
+effects = Array[int]([0, 1, 2])
+sprite_texture = ExtResource("2_xxovk")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

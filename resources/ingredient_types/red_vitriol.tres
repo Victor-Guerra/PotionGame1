@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://drsags4s7hfx6"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_lbet2"]
+[ext_resource type="Texture2D" uid="uid://du8nb1w2v2d0n" path="res://assets/sprites/ingredient_sprites/powder1.png" id="2_81mf5"]
+
+[resource]
+script = ExtResource("1_lbet2")
+ingredient_name = "Red Vitriol"
+ingredient_type = 3
+base_potency = 1.7
+base_value = 50
+base_stability = 2.12
+effects = Array[int]([2, 27, 38])
+rarity = 2
+sprite_texture = ExtResource("2_81mf5")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

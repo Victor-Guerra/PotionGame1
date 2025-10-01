@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://udy0xbyf5cr3"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_5f5ee"]
+[ext_resource type="Texture2D" uid="uid://6ppoac36o0ek" path="res://assets/sprites/ingredient_sprites/a_muscaria.png" id="2_u4i5e"]
+
+[resource]
+script = ExtResource("1_5f5ee")
+ingredient_name = "Amanita Muscaria"
+base_potency = 2.0
+base_value = 50
+base_stability = 0.3
+effects = Array[int]([12, 1, 25])
+rarity = 3
+sprite_texture = ExtResource("2_u4i5e")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

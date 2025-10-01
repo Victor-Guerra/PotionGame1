@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://bq6o7bi5nx4ew"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_8opy5"]
+[ext_resource type="Texture2D" uid="uid://du8nb1w2v2d0n" path="res://assets/sprites/ingredient_sprites/powder1.png" id="2_nawwo"]
+
+[resource]
+script = ExtResource("1_8opy5")
+ingredient_name = "Pink Vitriol"
+ingredient_type = 3
+base_potency = 0.6
+base_value = 10
+base_stability = 1.7
+effects = Array[int]([38, 21, 3])
+rarity = 1
+sprite_texture = ExtResource("2_nawwo")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

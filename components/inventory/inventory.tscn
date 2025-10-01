@@ -1,0 +1,208 @@
+[gd_scene load_steps=16 format=3 uid="uid://clisi50167txh"]
+
+[ext_resource type="Script" uid="uid://h8afk025v4uk" path="res://components/inventory/inventory.gd" id="1_48j2y"]
+[ext_resource type="Resource" uid="uid://8y0wuhbf5rpo" path="res://resources/Inventory.tres" id="2_q8l1h"]
+[ext_resource type="Texture2D" uid="uid://btreixo2x64m5" path="res://assets/sprites/The Symbols v1-0 Alpha.png" id="3_q8l1h"]
+[ext_resource type="PackedScene" uid="uid://ryseorry45hw" path="res://components/inventory/details_panel.tscn" id="3_wfpci"]
+[ext_resource type="PackedScene" uid="uid://1n5k5w7d1y6k" path="res://components/inventory/inventory_slot.tscn" id="5_53eo7"]
+[ext_resource type="PackedScene" uid="uid://dt63c8tj2ceqa" path="res://test/components/inventory_tests/inventory_debug_component.tscn" id="6_otuy5"]
+[ext_resource type="Resource" uid="uid://27u8ekkmafaj" path="res://resources/IngredientList.tres" id="7_0dlhe"]
+[ext_resource type="PackedScene" uid="uid://eklicnqbiuk8" path="res://components/state_machine/state_machine.tscn" id="8_eaube"]
+[ext_resource type="Script" uid="uid://cybpo0pwpj81c" path="res://components/inventory/states/inventory_state.gd" id="9_rcmy8"]
+[ext_resource type="Script" uid="uid://deo3lkvfrmfo0" path="res://components/inventory/states/inventory_lbutton_state.gd" id="17_wfpci"]
+[ext_resource type="Script" uid="uid://crp7n4eeb150p" path="res://components/inventory/states/inventory_rbutton_state.gd" id="18_ctk3u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53eo7"]
+atlas = ExtResource("3_q8l1h")
+region = Rect2(144, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_otuy5"]
+atlas = ExtResource("3_q8l1h")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48j2y"]
+atlas = ExtResource("3_q8l1h")
+region = Rect2(112, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dlhe"]
+atlas = ExtResource("3_q8l1h")
+region = Rect2(96, 32, 16, 16)
+
+[node name="Inventory" type="Control" node_paths=PackedStringArray("state_machine")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_48j2y")
+inventory_resource = ExtResource("2_q8l1h")
+state_machine = NodePath("StateMachine")
+
+[node name="tabs" type="TabBar" parent="."]
+custom_minimum_size = Vector2(860, 540)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -430.0
+offset_top = -270.0
+offset_right = 430.0
+offset_bottom = 270.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+max_tab_width = 5
+
+[node name="Control" type="Control" parent="tabs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="VBoxContainer" parent="tabs/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="DetailsPanel" parent="tabs/Control/Panel" instance=ExtResource("3_wfpci")]
+layout_mode = 2
+
+[node name="Bottom" type="HBoxContainer" parent="tabs/Control/Panel"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="LButtonContainer" type="CenterContainer" parent="tabs/Control/Panel/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ButtonLeft" type="TextureButton" parent="tabs/Control/Panel/Bottom/LButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = SubResource("AtlasTexture_53eo7")
+texture_hover = SubResource("AtlasTexture_otuy5")
+
+[node name="Slots" type="VBoxContainer" parent="tabs/Control/Panel/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RowA" type="HBoxContainer" parent="tabs/Control/Panel/Bottom/Slots"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot_1A" parent="tabs/Control/Panel/Bottom/Slots/RowA" instance=ExtResource("5_53eo7")]
+layout_mode = 2
+
+[node name="Slot_2A" parent="tabs/Control/Panel/Bottom/Slots/RowA" instance=ExtResource("5_53eo7")]
+layout_mode = 2
+
+[node name="Slot_3A" parent="tabs/Control/Panel/Bottom/Slots/RowA" instance=ExtResource("5_53eo7")]
+layout_mode = 2
+
+[node name="Slot_4A" parent="tabs/Control/Panel/Bottom/Slots/RowA" instance=ExtResource("5_53eo7")]
+layout_mode = 2
+
+[node name="RowB" type="HBoxContainer" parent="tabs/Control/Panel/Bottom/Slots"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Slot_1B" parent="tabs/Control/Panel/Bottom/Slots/RowB" instance=ExtResource("5_53eo7")]
+layout_mode = 2
+
+[node name="Slot_2B" parent="tabs/Control/Panel/Bottom/Slots/RowB" instance=ExtResource("5_53eo7")]
+layout_mode = 2
+
+[node name="Slot_3B" parent="tabs/Control/Panel/Bottom/Slots/RowB" instance=ExtResource("5_53eo7")]
+layout_mode = 2
+
+[node name="Slot_4B" parent="tabs/Control/Panel/Bottom/Slots/RowB" instance=ExtResource("5_53eo7")]
+layout_mode = 2
+
+[node name="RButtonContainer" type="CenterContainer" parent="tabs/Control/Panel/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="ButtonRight" type="TextureButton" parent="tabs/Control/Panel/Bottom/RButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = SubResource("AtlasTexture_48j2y")
+texture_hover = SubResource("AtlasTexture_0dlhe")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Debug" parent="." instance=ExtResource("6_otuy5")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -475.0
+offset_top = -230.0
+offset_right = -474.504
+offset_bottom = -230.0
+grow_horizontal = 1
+grow_vertical = 1
+inventory_obj = ExtResource("2_q8l1h")
+avail_ingredients = ExtResource("7_0dlhe")
+
+[node name="StateMachine" parent="." node_paths=PackedStringArray("starting_state") instance=ExtResource("8_eaube")]
+starting_state = NodePath("Slot1")
+
+[node name="Slot1" type="Node" parent="StateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
+script = ExtResource("9_rcmy8")
+ui_element = NodePath("../../tabs/Control/Panel/Bottom/Slots/RowA/Slot_1A")
+connected_states = [NodePath("../LeftButtonUp"), null, NodePath("../Slot2"), NodePath("../Slot5")]
+
+[node name="Slot2" type="Node" parent="StateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
+script = ExtResource("9_rcmy8")
+ui_element = NodePath("../../tabs/Control/Panel/Bottom/Slots/RowA/Slot_2A")
+connected_states = [NodePath("../Slot1"), null, NodePath("../Slot3"), NodePath("../Slot6")]
+
+[node name="Slot3" type="Node" parent="StateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
+script = ExtResource("9_rcmy8")
+ui_element = NodePath("../../tabs/Control/Panel/Bottom/Slots/RowA/Slot_3A")
+connected_states = [NodePath("../Slot2"), null, NodePath("../Slot4"), NodePath("../Slot7")]
+
+[node name="Slot4" type="Node" parent="StateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
+script = ExtResource("9_rcmy8")
+ui_element = NodePath("../../tabs/Control/Panel/Bottom/Slots/RowA/Slot_4A")
+connected_states = [NodePath("../Slot3"), null, NodePath("../RightButtonUp"), NodePath("../Slot8")]
+
+[node name="Slot5" type="Node" parent="StateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
+script = ExtResource("9_rcmy8")
+ui_element = NodePath("../../tabs/Control/Panel/Bottom/Slots/RowB/Slot_1B")
+connected_states = [NodePath("../LeftButtonBottom"), NodePath("../Slot1"), NodePath("../Slot6"), null]
+
+[node name="Slot6" type="Node" parent="StateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
+script = ExtResource("9_rcmy8")
+ui_element = NodePath("../../tabs/Control/Panel/Bottom/Slots/RowB/Slot_2B")
+connected_states = [NodePath("../Slot5"), NodePath("../Slot2"), NodePath("../Slot7"), null]
+
+[node name="Slot7" type="Node" parent="StateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
+script = ExtResource("9_rcmy8")
+ui_element = NodePath("../../tabs/Control/Panel/Bottom/Slots/RowB/Slot_3B")
+connected_states = [NodePath("../Slot6"), NodePath("../Slot3"), NodePath("../Slot8"), null]
+
+[node name="Slot8" type="Node" parent="StateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
+script = ExtResource("9_rcmy8")
+ui_element = NodePath("../../tabs/Control/Panel/Bottom/Slots/RowB/Slot_4B")
+connected_states = [NodePath("../Slot7"), NodePath("../Slot4"), NodePath("../RightButtonBottom"), null]
+
+[node name="LeftButtonUp" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("17_wfpci")
+next_state = NodePath("../Slot4")
+
+[node name="LeftButtonBottom" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("17_wfpci")
+next_state = NodePath("../Slot8")
+
+[node name="RightButtonUp" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("18_ctk3u")
+next_state = NodePath("../Slot1")
+
+[node name="RightButtonBottom" type="Node" parent="StateMachine" node_paths=PackedStringArray("next_state")]
+script = ExtResource("18_ctk3u")
+next_state = NodePath("../Slot5")

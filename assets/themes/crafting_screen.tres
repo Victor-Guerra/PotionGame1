@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ddkmwkopfac3b"]
+
+[ext_resource type="FontFile" uid="uid://da5dwr0us0asw" path="res://assets/fonts/ThaleahFat.ttf" id="1_fqyls"]
+
+[resource]
+Button/fonts/font = ExtResource("1_fqyls")
+Label/fonts/font = ExtResource("1_fqyls")
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("1_fqyls")

@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgfxcl0670yff"]
+
+[ext_resource type="Script" uid="uid://6upi604c6k7b" path="res://components/ingredient/ingredient.gd" id="1_n7138"]
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="2_ho1p4"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7iyan"]
+
+[sub_resource type="Resource" id="Resource_5f0at"]
+script = ExtResource("2_ho1p4")
+ingredient_name = "DefaultIngredient"
+ingredient_type = 0
+base_potency = 0.0
+base_value = 0
+effects = Array[int]([])
+rarity = 4
+sprite_texture = SubResource("PlaceholderTexture2D_7iyan")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"
+
+[node name="Ingredient" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_n7138")
+details = SubResource("Resource_5f0at")
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 3

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://dbwo32rnbv11x"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_o2bnn"]
+[ext_resource type="Texture2D" uid="uid://du8nb1w2v2d0n" path="res://assets/sprites/ingredient_sprites/powder1.png" id="2_stqkm"]
+
+[resource]
+script = ExtResource("1_o2bnn")
+ingredient_name = "Salt"
+ingredient_type = 3
+base_potency = 0.7
+base_value = 5
+base_stability = 2.0
+effects = Array[int]([36, 15, 10])
+sprite_texture = ExtResource("2_stqkm")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

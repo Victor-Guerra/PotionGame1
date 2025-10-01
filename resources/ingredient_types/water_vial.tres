@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://d3op7nc68p5ih"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_6vmdc"]
+[ext_resource type="Texture2D" uid="uid://crfi02m7mkc5k" path="res://assets/sprites/ingredient_sprites/water_vial.png" id="2_758dn"]
+
+[resource]
+script = ExtResource("1_6vmdc")
+ingredient_name = "Water"
+ingredient_type = 5
+base_potency = 1.5
+base_value = 1
+base_stability = 2.0
+effects = Array[int]([0, 9, 11])
+sprite_texture = ExtResource("2_758dn")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

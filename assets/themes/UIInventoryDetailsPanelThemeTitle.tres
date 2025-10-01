@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://1sotqrg2hncl"]
+
+[ext_resource type="FontFile" uid="uid://dvl7n4g0gyjnh" path="res://assets/fonts/NotJamBlackletter16.ttf" id="1_fyqko"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.40866563, 0, 0.040904686, 1)
+RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("1_fyqko")

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://ds2u63r3bit1w"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_ukoqf"]
+[ext_resource type="Texture2D" uid="uid://bpcpulrgfj58u" path="res://assets/sprites/ingredient_sprites/example_flower.png" id="2_u4veh"]
+
+[resource]
+script = ExtResource("1_ukoqf")
+ingredient_name = "Stunflower"
+ingredient_type = 1
+base_potency = 1.3
+base_value = 12
+base_stability = 1.5
+effects = Array[int]([13, 10, 22])
+rarity = 1
+sprite_texture = ExtResource("2_u4veh")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://h3877nilc68d"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_tmplr"]
+[ext_resource type="Texture2D" uid="uid://dwo5dib6k1bsj" path="res://assets/sprites/ingredient_sprites/iron_filings.png" id="2_o013r"]
+
+[resource]
+script = ExtResource("1_tmplr")
+ingredient_name = "Iron Shavings"
+ingredient_type = 4
+base_potency = 0.5
+base_value = 8
+base_stability = 2.0
+effects = Array[int]([21, 3, 19])
+rarity = 1
+sprite_texture = ExtResource("2_o013r")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

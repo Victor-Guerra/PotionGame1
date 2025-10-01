@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://c2rcs6i8u3n7h"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_k5tgm"]
+[ext_resource type="Texture2D" uid="uid://du8nb1w2v2d0n" path="res://assets/sprites/ingredient_sprites/powder1.png" id="2_f3okx"]
+
+[resource]
+script = ExtResource("1_k5tgm")
+ingredient_name = "Blue Vitriol"
+ingredient_type = 3
+base_potency = 0.6
+base_value = 26
+base_stability = 2.0
+effects = Array[int]([2, 37, 38])
+rarity = 2
+sprite_texture = ExtResource("2_f3okx")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

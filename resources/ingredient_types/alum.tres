@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://c5dw7pdls428i"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_yjn41"]
+[ext_resource type="Texture2D" uid="uid://53tbn24a6y5d" path="res://assets/sprites/ingredient_sprites/shitty_crystal.png" id="2_uevl2"]
+
+[resource]
+script = ExtResource("1_yjn41")
+ingredient_name = "Alum"
+ingredient_type = 3
+base_potency = 1.2
+base_value = 15
+base_stability = 1.9
+effects = Array[int]([40, 39, 37])
+rarity = 1
+sprite_texture = ExtResource("2_uevl2")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

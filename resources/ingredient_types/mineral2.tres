@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://cgb5t1r5deu3g"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_ody1u"]
+[ext_resource type="Texture2D" uid="uid://dxa42jnhvwkej" path="res://assets/sprites/ingredient_sprites/shitty_pyrite.png" id="2_dfqoj"]
+
+[resource]
+script = ExtResource("1_ody1u")
+ingredient_name = "Pyrite"
+ingredient_type = 3
+base_potency = 1.0
+base_value = 3
+base_stability = 1.7
+effects = Array[int]([2, 19, 3])
+sprite_texture = ExtResource("2_dfqoj")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://1n5k5w7d1y6k"]
+
+[ext_resource type="Script" uid="uid://ctk1kvaqbh3vv" path="res://components/inventory/inventory_slot.gd" id="1_g2eh1"]
+[ext_resource type="Theme" uid="uid://ddkmwkopfac3b" path="res://assets/themes/crafting_screen.tres" id="1_plc3h"]
+[ext_resource type="Texture2D" uid="uid://sf5j11jd21t4" path="res://assets/sprites/inventory_slot.png" id="1_qsbct"]
+[ext_resource type="Texture2D" uid="uid://dvheg76vrw0vp" path="res://assets/sprites/hand.png" id="4_x0hag"]
+
+[node name="Slot_1A" type="Panel"]
+texture_filter = 1
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme = ExtResource("1_plc3h")
+script = ExtResource("1_g2eh1")
+metadata/_edit_lock_ = true
+
+[node name="SlotTexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 63)
+texture = ExtResource("1_qsbct")
+
+[node name="ItemIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(64, 63)
+
+[node name="QtyPanel" type="Panel" parent="ItemIcon"]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="RTL" type="RichTextLabel" parent="ItemIcon/QtyPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hand" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(91, 95)
+texture = ExtResource("4_x0hag")

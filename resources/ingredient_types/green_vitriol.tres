@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://jhq4rkjwc7yb"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_5grx3"]
+[ext_resource type="Texture2D" uid="uid://du8nb1w2v2d0n" path="res://assets/sprites/ingredient_sprites/powder1.png" id="2_p0w3n"]
+
+[resource]
+script = ExtResource("1_5grx3")
+ingredient_name = "Green Vitriol"
+ingredient_type = 3
+base_potency = 2.0
+base_value = 40
+base_stability = 1.7
+effects = Array[int]([27, 37, 38])
+rarity = 2
+sprite_texture = ExtResource("2_p0w3n")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

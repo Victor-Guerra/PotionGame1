@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://bj8pe6sy3vy66"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_4o5qg"]
+[ext_resource type="Texture2D" uid="uid://b3vqadpjf3gg5" path="res://assets/sprites/ingredient_sprites/herb1.png" id="2_fdoul"]
+
+[resource]
+script = ExtResource("1_4o5qg")
+ingredient_name = "Illweed"
+ingredient_type = 1
+base_potency = 0.8
+base_value = 5
+base_stability = 2.0
+effects = Array[int]([1, 4, 9])
+sprite_texture = ExtResource("2_fdoul")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

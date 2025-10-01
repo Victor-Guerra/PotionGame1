@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://bf023ki3shckn"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_dgyhk"]
+[ext_resource type="Texture2D" uid="uid://cqdfvv0ey382p" path="res://assets/sprites/ingredient_sprites/shroom2.png" id="2_i01su"]
+
+[resource]
+script = ExtResource("1_dgyhk")
+ingredient_name = "Healing Stun Cap"
+base_potency = 2.0
+base_value = 20
+base_stability = 0.5
+effects = Array[int]([16, 13, 7])
+rarity = 2
+sprite_texture = ExtResource("2_i01su")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"
