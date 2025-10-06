@@ -12,9 +12,6 @@ class ObjectTypes: ## Name subject to change
 		LIQUID
 	}
 
-	static func get_ingredient_type_from_int(type: IngredientType) -> String:
-		return IngredientType.keys()[type]
-
 	enum PotionEffect {
 		## HealthAndAttributes
 		AlleviatePain = 0,
@@ -67,9 +64,6 @@ class ObjectTypes: ## Name subject to change
 		AntiFlame,
 
 	}
-
-	static func get_potion_effect_from_int(effect: PotionEffect) -> String:
-		return PotionEffect.keys()[effect]
 	
 	enum ItemRarity {
 		COMMON = 0,
@@ -78,6 +72,3 @@ class ObjectTypes: ## Name subject to change
 		SUPER_RARE,
 		UNIQUE
 	}
-
-	static func get_item_rarity_from_int(rarity: ItemRarity) -> String:
-		return ItemRarity.keys()[rarity]

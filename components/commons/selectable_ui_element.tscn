@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpb1c170y7hdl"]
+
+[ext_resource type="Script" uid="uid://da7xfer7ts5fh" path="res://components/commons/selectable_ui_element.gd" id="1_0rno5"]
+[ext_resource type="Texture2D" uid="uid://dvheg76vrw0vp" path="res://assets/sprites/hand.png" id="1_g4buk"]
+
+[node name="Selectable" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0rno5")
+
+[node name="Hand" type="Sprite2D" parent="."]
+visible = false
+z_index = 5
+position = Vector2(194, 192)
+texture = ExtResource("1_g4buk")

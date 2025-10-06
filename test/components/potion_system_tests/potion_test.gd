@@ -6,10 +6,10 @@ class_name TestPotionSystem
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(ingredient_list.AvailableIngredients)
-	var new_potion = PotionDetails.new(ingredient_list.AvailableIngredients[6], 
-									   ingredient_list.AvailableIngredients[10],
-									   ingredient_list.AvailableIngredients[4])
+	print(ingredient_list.IngredientDict)
+	var new_potion = PotionDetails.new(ingredient_list.get_ingredient("White Vitriol"), 
+									   ingredient_list.get_ingredient("Blue Vitriol"),
+									   ingredient_list.get_ingredient("Red Vitriol"))
 	print("***********")
 	print("pot:" + str(new_potion.potency))
 	print("str:" + str(new_potion.strength))

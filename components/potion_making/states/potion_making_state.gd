@@ -1,5 +1,5 @@
 extends State
-class_name InventoryStateDefault
+class_name PotionMakingStateDefault
 
 ## The UI node to which this state is associated with,
 ## so that it can control it directly
@@ -16,11 +16,6 @@ class_name InventoryStateDefault
 
 func enter() -> void:
 	ui_element.enable_hand()
-
-	if ui_element.content.stored_ingredient:
-		parent.populate_details_panel(ui_element.content.stored_ingredient)
-	else:
-		parent.clear_details_panel()
 	
 func exit() -> void:
 	ui_element.disable_hand()

@@ -39,14 +39,14 @@ func render_items() -> void:
 		var inv_index = i + (SLOTS_PER_PAGE * (current_page - 1))
 
 		if inv_index >= len(inv_contents):
-			slots[i].disable_icon()
+			slots[i].content.disable_icon()
 			continue
 
-		slots[i].set_texture(inv_contents[inv_index].ingredient.details.sprite_texture) 
-		slots[i].set_qty_text(str(inv_contents[inv_index].get_qty()))
-		slots[i].set_stored_ingredient(inv_contents[inv_index].ingredient.details) ## 
-		slots[i].enable_icon()
-		slots[i].enable_qty_panel()
+		slots[i].content.set_texture(inv_contents[inv_index].ingredient.details.sprite_texture) 
+		slots[i].content.set_qty_text(str(inv_contents[inv_index].get_qty()))
+		slots[i].content.set_stored_ingredient(inv_contents[inv_index].ingredient.details) ## 
+		slots[i].content.enable_icon()
+		slots[i].content.enable_qty_panel()
 
 func next_page() -> void:
 	current_page += 1
@@ -72,4 +72,4 @@ func clear_details_panel() -> void:
 
 func clear_slots_info() -> void:
 	for slot in slots:
-		slot.clear_stored_ingredient()
+		slot.content.clear_stored_ingredient()

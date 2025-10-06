@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=3 uid="uid://clisi50167txh"]
+[gd_scene load_steps=17 format=3 uid="uid://clisi50167txh"]
 
 [ext_resource type="Script" uid="uid://h8afk025v4uk" path="res://components/inventory/inventory.gd" id="1_48j2y"]
 [ext_resource type="Resource" uid="uid://8y0wuhbf5rpo" path="res://resources/Inventory.tres" id="2_q8l1h"]
 [ext_resource type="Texture2D" uid="uid://btreixo2x64m5" path="res://assets/sprites/The Symbols v1-0 Alpha.png" id="3_q8l1h"]
 [ext_resource type="PackedScene" uid="uid://ryseorry45hw" path="res://components/inventory/details_panel.tscn" id="3_wfpci"]
 [ext_resource type="PackedScene" uid="uid://1n5k5w7d1y6k" path="res://components/inventory/inventory_slot.tscn" id="5_53eo7"]
+[ext_resource type="PackedScene" uid="uid://dpb1c170y7hdl" path="res://components/commons/selectable_ui_element.tscn" id="5_hvnex"]
 [ext_resource type="PackedScene" uid="uid://dt63c8tj2ceqa" path="res://test/components/inventory_tests/inventory_debug_component.tscn" id="6_otuy5"]
 [ext_resource type="Resource" uid="uid://27u8ekkmafaj" path="res://resources/IngredientList.tres" id="7_0dlhe"]
 [ext_resource type="PackedScene" uid="uid://eklicnqbiuk8" path="res://components/state_machine/state_machine.tscn" id="8_eaube"]
@@ -94,33 +95,129 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Slot_1A" parent="tabs/Control/Panel/Bottom/Slots/RowA" instance=ExtResource("5_53eo7")]
+[node name="Slot_1A" parent="tabs/Control/Panel/Bottom/Slots/RowA" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
+size_flags_horizontal = 3
+content = NodePath("Slot_1A")
 
-[node name="Slot_2A" parent="tabs/Control/Panel/Bottom/Slots/RowA" instance=ExtResource("5_53eo7")]
-layout_mode = 2
+[node name="Slot_1A" parent="tabs/Control/Panel/Bottom/Slots/RowA/Slot_1A" instance=ExtResource("5_53eo7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Slot_3A" parent="tabs/Control/Panel/Bottom/Slots/RowA" instance=ExtResource("5_53eo7")]
+[node name="Slot_2A" parent="tabs/Control/Panel/Bottom/Slots/RowA" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
+size_flags_horizontal = 3
+content = NodePath("Slot_2A")
 
-[node name="Slot_4A" parent="tabs/Control/Panel/Bottom/Slots/RowA" instance=ExtResource("5_53eo7")]
+[node name="Slot_2A" parent="tabs/Control/Panel/Bottom/Slots/RowA/Slot_2A" instance=ExtResource("5_53eo7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot_3A" parent="tabs/Control/Panel/Bottom/Slots/RowA" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
+size_flags_horizontal = 3
+content = NodePath("Slot_3A")
+
+[node name="Slot_3A" parent="tabs/Control/Panel/Bottom/Slots/RowA/Slot_3A" instance=ExtResource("5_53eo7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot_4A" parent="tabs/Control/Panel/Bottom/Slots/RowA" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
+layout_mode = 2
+size_flags_horizontal = 3
+content = NodePath("Slot_4A")
+
+[node name="Slot_4A" parent="tabs/Control/Panel/Bottom/Slots/RowA/Slot_4A" instance=ExtResource("5_53eo7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RowB" type="HBoxContainer" parent="tabs/Control/Panel/Bottom/Slots"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Slot_1B" parent="tabs/Control/Panel/Bottom/Slots/RowB" instance=ExtResource("5_53eo7")]
+[node name="Slot_1B" parent="tabs/Control/Panel/Bottom/Slots/RowB" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
+size_flags_horizontal = 3
+content = NodePath("Slot_1B")
 
-[node name="Slot_2B" parent="tabs/Control/Panel/Bottom/Slots/RowB" instance=ExtResource("5_53eo7")]
-layout_mode = 2
+[node name="Slot_1B" parent="tabs/Control/Panel/Bottom/Slots/RowB/Slot_1B" instance=ExtResource("5_53eo7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Slot_3B" parent="tabs/Control/Panel/Bottom/Slots/RowB" instance=ExtResource("5_53eo7")]
+[node name="Slot_2B" parent="tabs/Control/Panel/Bottom/Slots/RowB" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
+size_flags_horizontal = 3
+content = NodePath("Slot_2B")
 
-[node name="Slot_4B" parent="tabs/Control/Panel/Bottom/Slots/RowB" instance=ExtResource("5_53eo7")]
+[node name="Slot_2B" parent="tabs/Control/Panel/Bottom/Slots/RowB/Slot_2B" instance=ExtResource("5_53eo7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot_3B" parent="tabs/Control/Panel/Bottom/Slots/RowB" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
+size_flags_horizontal = 3
+content = NodePath("Slot_3B")
+
+[node name="Slot_3B" parent="tabs/Control/Panel/Bottom/Slots/RowB/Slot_3B" instance=ExtResource("5_53eo7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot_4B" parent="tabs/Control/Panel/Bottom/Slots/RowB" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
+layout_mode = 2
+size_flags_horizontal = 3
+content = NodePath("Slot_4B")
+
+[node name="Slot_4B" parent="tabs/Control/Panel/Bottom/Slots/RowB/Slot_4B" instance=ExtResource("5_53eo7")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="RButtonContainer" type="CenterContainer" parent="tabs/Control/Panel/Bottom"]
 layout_mode = 2

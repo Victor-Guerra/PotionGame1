@@ -69,7 +69,7 @@ func calculate_value(ing1: IngredientDetails,
 	#var cra: int = ing1.rarity + ing2.rarity + ing3.rarity
 	var epi: float = pow(e, ing1.base_potency*ing2.base_potency*ing3.base_potency)
 
-	return floori((svi*strength*st*epi)/100)
+	return floori(svi*((strength*st*epi)/100))
 
 func derive_effects(ing1: IngredientDetails,
 					ing2: IngredientDetails,

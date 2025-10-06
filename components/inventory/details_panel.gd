@@ -26,10 +26,10 @@ func clear_panel() -> void:
 
 func set_labels(ingredient: IngredientDetails):
 	name_label.text = ingredient.ingredient_name
-	type_label.text = Globals.ObjectTypes.get_ingredient_type_from_int(ingredient.ingredient_type)
-	rarity_label.text = Globals.ObjectTypes.get_item_rarity_from_int(ingredient.rarity)
+	type_label.text = Globals.ObjectTypes.IngredientType.find_key(ingredient.ingredient_type)
+	rarity_label.text = Globals.ObjectTypes.ItemRarity.find_key(ingredient.rarity)
 	value_label.text = str(ingredient.base_value) + "G"
 
-	effect1_label.text = Globals.ObjectTypes.get_potion_effect_from_int(ingredient.effects[0])
-	effect2_label.text = Globals.ObjectTypes.get_potion_effect_from_int(ingredient.effects[1])
-	effect3_label.text = Globals.ObjectTypes.get_potion_effect_from_int(ingredient.effects[2])
+	effect1_label.text = Globals.ObjectTypes.PotionEffect.find_key(ingredient.effects[0])
+	effect2_label.text = Globals.ObjectTypes.PotionEffect.find_key(ingredient.effects[1])
+	effect3_label.text = Globals.ObjectTypes.PotionEffect.find_key(ingredient.effects[2])

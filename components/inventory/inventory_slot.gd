@@ -4,7 +4,6 @@ class_name InventorySlot
 @onready var item_icon: TextureRect = $ItemIcon
 @onready var qty_panel: Panel = $ItemIcon/QtyPanel
 @onready var qty_label: RichTextLabel = $ItemIcon/QtyPanel/RTL
-@onready var hand: Sprite2D = $Hand
 
 var is_selected: bool = false
 var stored_ingredient: IngredientDetails
@@ -37,12 +36,6 @@ func enable_icon() -> void:
 
 func disable_icon() -> void:
 	item_icon.visible = false
-
-func enable_hand() -> void:
-	hand.visible = true
-
-func disable_hand() -> void:
-	hand.visible = false
 
 func set_stored_ingredient(ingredient: IngredientDetails) -> void:
 	stored_ingredient = ingredient
