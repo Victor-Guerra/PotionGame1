@@ -73,3 +73,9 @@ func clear_details_panel() -> void:
 func clear_slots_info() -> void:
 	for slot in slots:
 		slot.content.clear_stored_ingredient()
+
+func enable_sm() -> void:
+	state_machine.enable()
+
+func disable_sm() -> void:
+	state_machine.disable()

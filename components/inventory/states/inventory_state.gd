@@ -36,3 +36,10 @@ func process_input(event: InputEvent) -> State:
 		return states_dict["up"]
 		
 	return null
+
+func process_unhandled_input(event: InputEvent) -> State:
+	if event.is_action_pressed("menu_enter"):
+		GlobalSignals.add_ingredient.emit(ui_element.content.stored_ingredient)
+		get_viewport().set_input_as_handled()
+
+	return null

@@ -19,3 +19,6 @@ func process_physics(delta: float) -> State:
 
 func process_input(event: InputEvent) -> State:
 	return null
+
+func process_unhandled_input(event: InputEvent) -> State:
+	return null

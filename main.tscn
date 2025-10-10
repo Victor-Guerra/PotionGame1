@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh1q0xqfoq587"]
+
+[ext_resource type="Script" uid="uid://c1jjk1lfgv5nd" path="res://components/main_screen/main.gd" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://d1fas8wcux6ym" path="res://components/potion_making/potion_making_panel.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://clisi50167txh" path="res://components/inventory/inventory.tscn" id="3_1bvp3"]
+
+[node name="Main" type="Control" node_paths=PackedStringArray("inventory_panel", "potion_making_panel")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+inventory_panel = NodePath("Inventory")
+potion_making_panel = NodePath("PotionMaking")
+
+[node name="PotionMaking" parent="." instance=ExtResource("2_h2yge")]
+layout_mode = 1
+anchor_left = -0.49479166
+anchor_top = -0.50308645
+anchor_right = -0.111979164
+anchor_bottom = 0.49691358
+
+[node name="Inventory" parent="." instance=ExtResource("3_1bvp3")]
+layout_mode = 0
+offset_left = 226.0
+offset_top = 100.00003
+offset_right = 226.0
+offset_bottom = 100.00003
+scale = Vector2(0.73333335, 0.7487923)
+
+[node name="Camera2D" type="Camera2D" parent="."]

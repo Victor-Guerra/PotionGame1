@@ -7,8 +7,7 @@ class_name PotionMakingCookButtonState
 @export var connected_states: Array[State]
 
 @onready var states_dict: Dictionary = {
-	"enter" = connected_states[0],
-	"down" = connected_states[1]
+	"down" = connected_states[0]
 }
 
 signal cook_potion
@@ -26,4 +25,3 @@ func process_input(event: InputEvent) -> State:
 		emit_signal("cook_potion")
 		
 	return null
-

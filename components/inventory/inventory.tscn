@@ -97,7 +97,8 @@ size_flags_vertical = 3
 
 [node name="Slot_1A" parent="tabs/Control/Panel/Bottom/Slots/RowA" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 content = NodePath("Slot_1A")
 
 [node name="Slot_1A" parent="tabs/Control/Panel/Bottom/Slots/RowA/Slot_1A" instance=ExtResource("5_53eo7")]
@@ -112,7 +113,8 @@ grow_vertical = 2
 
 [node name="Slot_2A" parent="tabs/Control/Panel/Bottom/Slots/RowA" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 content = NodePath("Slot_2A")
 
 [node name="Slot_2A" parent="tabs/Control/Panel/Bottom/Slots/RowA/Slot_2A" instance=ExtResource("5_53eo7")]
@@ -127,7 +129,8 @@ grow_vertical = 2
 
 [node name="Slot_3A" parent="tabs/Control/Panel/Bottom/Slots/RowA" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 content = NodePath("Slot_3A")
 
 [node name="Slot_3A" parent="tabs/Control/Panel/Bottom/Slots/RowA/Slot_3A" instance=ExtResource("5_53eo7")]
@@ -142,7 +145,8 @@ grow_vertical = 2
 
 [node name="Slot_4A" parent="tabs/Control/Panel/Bottom/Slots/RowA" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 content = NodePath("Slot_4A")
 
 [node name="Slot_4A" parent="tabs/Control/Panel/Bottom/Slots/RowA/Slot_4A" instance=ExtResource("5_53eo7")]
@@ -161,7 +165,8 @@ size_flags_vertical = 3
 
 [node name="Slot_1B" parent="tabs/Control/Panel/Bottom/Slots/RowB" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 content = NodePath("Slot_1B")
 
 [node name="Slot_1B" parent="tabs/Control/Panel/Bottom/Slots/RowB/Slot_1B" instance=ExtResource("5_53eo7")]
@@ -176,7 +181,8 @@ grow_vertical = 2
 
 [node name="Slot_2B" parent="tabs/Control/Panel/Bottom/Slots/RowB" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 content = NodePath("Slot_2B")
 
 [node name="Slot_2B" parent="tabs/Control/Panel/Bottom/Slots/RowB/Slot_2B" instance=ExtResource("5_53eo7")]
@@ -191,7 +197,8 @@ grow_vertical = 2
 
 [node name="Slot_3B" parent="tabs/Control/Panel/Bottom/Slots/RowB" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 content = NodePath("Slot_3B")
 
 [node name="Slot_3B" parent="tabs/Control/Panel/Bottom/Slots/RowB/Slot_3B" instance=ExtResource("5_53eo7")]
@@ -206,7 +213,8 @@ grow_vertical = 2
 
 [node name="Slot_4B" parent="tabs/Control/Panel/Bottom/Slots/RowB" node_paths=PackedStringArray("content") instance=ExtResource("5_hvnex")]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 6
+size_flags_vertical = 4
 content = NodePath("Slot_4B")
 
 [node name="Slot_4B" parent="tabs/Control/Panel/Bottom/Slots/RowB/Slot_4B" instance=ExtResource("5_53eo7")]
@@ -229,17 +237,13 @@ size_flags_horizontal = 6
 texture_normal = SubResource("AtlasTexture_48j2y")
 texture_hover = SubResource("AtlasTexture_0dlhe")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Debug" parent="." instance=ExtResource("6_otuy5")]
-layout_mode = 0
+layout_mode = 1
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = -475.0
-offset_top = -230.0
-offset_right = -474.504
-offset_bottom = -230.0
+offset_right = 0.4960022
+offset_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
 inventory_obj = ExtResource("2_q8l1h")
