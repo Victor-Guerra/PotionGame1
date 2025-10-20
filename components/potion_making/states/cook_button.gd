@@ -10,8 +10,6 @@ class_name PotionMakingCookButtonState
 	"down" = connected_states[0]
 }
 
-signal cook_potion
-
 func enter() -> void:
 	ui_element.enable_hand()
 	
@@ -21,7 +19,12 @@ func exit() -> void:
 func process_input(event: InputEvent) -> State:
 	if event.is_action_pressed("menu_down"):
 		return states_dict["down"]
-	elif event.is_action_pressed("menu_enter"):
-		emit_signal("cook_potion")
+		
+	return null
+
+func process_unhandled_input(event: InputEvent) -> State:
+	if event.is_action_pressed("menu_enter"):
+		GlobalSignals.cook_potion.emit()
+		get_viewport().set_input_as_handled()
 		
 	return null

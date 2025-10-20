@@ -1,0 +1,284 @@
+[gd_scene load_steps=10 format=3 uid="uid://bqglq6gjsht8y"]
+
+[ext_resource type="Texture2D" uid="uid://da41w5pmpxhjc" path="res://assets/sprites/generic_tiles.png" id="1_4fird"]
+[ext_resource type="Theme" uid="uid://dvbu2tpf5xrsi" path="res://assets/themes/UIInventoryDetailsPanelThemeBody.tres" id="1_t56as"]
+[ext_resource type="Script" uid="uid://dwcty0kvj5qb4" path="res://components/potion_details_panel/scripts/potion_details_panel.gd" id="2_am3jv"]
+[ext_resource type="PackedScene" uid="uid://1n5k5w7d1y6k" path="res://components/inventory/inventory_slot.tscn" id="2_w1gov"]
+[ext_resource type="Theme" uid="uid://1sotqrg2hncl" path="res://assets/themes/UIInventoryDetailsPanelThemeTitle.tres" id="3_am3jv"]
+[ext_resource type="Texture2D" uid="uid://btreixo2x64m5" path="res://assets/sprites/The Symbols v1-0 Alpha.png" id="6_bfo5s"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1gov"]
+atlas = ExtResource("1_4fird")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t56as"]
+atlas = ExtResource("1_4fird")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr0ik"]
+atlas = ExtResource("6_bfo5s")
+region = Rect2(32, 129, 15, 15)
+
+[node name="UIPotionDetailsPanel" type="Control" node_paths=PackedStringArray("potion_title", "potion_icon", "potency_label", "strength_label", "stability_label", "value_label", "effect_labels", "effect1_label", "effect2_label", "effect3_label")]
+z_index = 6
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_t56as")
+script = ExtResource("2_am3jv")
+potion_title = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionTitleContainer/PotionTitle")
+potion_icon = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DPMargin/DisplayPotion")
+potency_label = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid/PotencyValue2")
+strength_label = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid/StrengthValue2")
+stability_label = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid/StabilityValue2")
+value_label = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid/ValueValue2")
+effect_labels = [NodePath("TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect1/EffectLabel"), NodePath("TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect2/EffectLabel"), NodePath("TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect3/EffectLabel"), NodePath("TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect4/EffectLabel")]
+effect1_label = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect1/EffectLabel")
+effect2_label = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect2/EffectLabel")
+effect3_label = NodePath("TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect3/EffectLabel")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5069444
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_w1gov")
+expand_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="PotionTitleContainer" type="CenterContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PotionTitle" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionTitleContainer"]
+layout_mode = 2
+theme = ExtResource("3_am3jv")
+text = "Potion of Ass"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="PotionIconContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="DPMargin" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_right = 64
+
+[node name="DisplayPotion" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DPMargin" instance=ExtResource("2_w1gov")]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="DetailsContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="DetailsBG" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer"]
+self_modulate = Color(0.49594963, 0.26636893, 1.92523e-07, 1)
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("AtlasTexture_t56as")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="QuantDetailsGrid" type="GridContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="PotencyLabel2" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t56as")
+text = "Potency:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PotencyValue2" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t56as")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+
+[node name="StrengthLabel2" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t56as")
+text = "Strength:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="StrengthValue2" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t56as")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+
+[node name="StabilityLabel2" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t56as")
+text = "Stability:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="StabilityValue2" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t56as")
+text = "0.0"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ValueLabel2" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t56as")
+text = "Value:"
+fit_content = true
+
+[node name="ValueValue2" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionIconContainer/DetailsContainer/DetailsBG/MarginContainer/QuantDetailsGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_t56as")
+text = "0G"
+fit_content = true
+autowrap_mode = 0
+
+[node name="PotionEffectsContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="EffectsTitle" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer"]
+layout_mode = 2
+
+[node name="EffectsTitleLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/EffectsTitle"]
+layout_mode = 2
+theme = ExtResource("3_am3jv")
+text = "Effects:"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Effect1" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Dot" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect1"]
+self_modulate = Color(0.42640153, 4.2716042e-07, 3.128499e-07, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_am3jv")
+texture = SubResource("AtlasTexture_xr0ik")
+
+[node name="EffectLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_am3jv")
+text = "Effect1"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Effect2" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Dot" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect2"]
+self_modulate = Color(0.42640153, 4.2716042e-07, 3.128499e-07, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_am3jv")
+texture = SubResource("AtlasTexture_xr0ik")
+
+[node name="EffectLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect2"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_am3jv")
+text = "Effect2"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Effect3" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Dot" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect3"]
+self_modulate = Color(0.42640153, 4.2716042e-07, 3.128499e-07, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_am3jv")
+texture = SubResource("AtlasTexture_xr0ik")
+
+[node name="EffectLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect3"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_am3jv")
+text = "Effect3"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Effect4" type="HBoxContainer" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Dot" type="TextureRect" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect4"]
+self_modulate = Color(0.42640153, 4.2716042e-07, 3.128499e-07, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("3_am3jv")
+texture = SubResource("AtlasTexture_xr0ik")
+
+[node name="EffectLabel" type="RichTextLabel" parent="TextureRect/MarginContainer/VBoxContainer/PotionEffectsContainer/Effect4"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_am3jv")
+text = "Effect3"
+fit_content = true
+autowrap_mode = 0

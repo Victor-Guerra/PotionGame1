@@ -121,3 +121,17 @@ func substract_arrays(arrs: Array[Array]) -> Array[Globals.ObjectTypes.PotionEff
 				repeated.append(i)
 	
 	return result
+
+func pprint() -> void:
+	print("***********")
+	print("pot:" + str(potency))
+	print("str:" + str(strength))
+	print("sta:" + str(stability))
+	print("val:" + str(value))
+	print("^^effects:")
+	for pe in effects:
+		print(Globals.ObjectTypes.PotionEffect.find_key(pe))
+	print("^^hidden effects:")
+	for pe in hidden_effects:
+		print(Globals.ObjectTypes.PotionEffect.find_key(pe))
+	print("***********")

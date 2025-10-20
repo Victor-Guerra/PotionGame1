@@ -35,7 +35,7 @@ func process_input(event: InputEvent) -> State:
 
 func process_unhandled_input(event: InputEvent) -> State:
 	if event.is_action_pressed("menu_enter"):
-		print(event.as_text())
+		#print(event.as_text())
 		GlobalSignals.open_inventory.emit()
 		get_viewport().set_input_as_handled()
 
