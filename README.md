@@ -7,4 +7,6 @@ All assets except for:
 were made by me.
 
 "Not Jam UI 15" and "NotJamBlackletter16" made by @not-jam.itch.io
+
+
 "ThaleahFat" made by "itch.io/profile/tinyworlds"
