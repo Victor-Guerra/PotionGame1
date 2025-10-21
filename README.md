@@ -10,3 +10,5 @@ were made by me.
 
 
 "ThaleahFat" made by "itch.io/profile/tinyworlds"
+
+"The Symbols v1-0 Alpha.png" made by @backterria.itch.io
