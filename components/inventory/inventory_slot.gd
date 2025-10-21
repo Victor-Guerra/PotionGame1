@@ -6,15 +6,7 @@ class_name InventorySlot
 @onready var qty_label: RichTextLabel = $ItemIcon/QtyPanel/RTL
 
 var is_selected: bool = false
-var stored_ingredient: IngredientDetails
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var stored_item: Resource
 
 func set_texture(new_texture: Texture) -> void:
 	item_icon.texture = new_texture
@@ -37,14 +29,14 @@ func enable_icon() -> void:
 func disable_icon() -> void:
 	item_icon.visible = false
 
-func set_stored_ingredient(ingredient: IngredientDetails) -> void:
-	stored_ingredient = ingredient
+func set_stored_item(item: Resource) -> void:
+	stored_item = item
 
-func get_stored_ingredient() -> IngredientDetails:
-	return stored_ingredient
+func get_stored_item() -> Resource:
+	return stored_item
 
-func clear_stored_ingredient() -> void:
-	stored_ingredient = null
+func clear_stored_item() -> void:
+	stored_item = null
 
 # ToDo: add an 'item count' label that updates qhen more than one of
 # 	an item is in the inventory

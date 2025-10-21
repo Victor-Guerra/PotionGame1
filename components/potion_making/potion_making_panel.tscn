@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d1fas8wcux6ym"]
+[gd_scene load_steps=13 format=3 uid="uid://d1fas8wcux6ym"]
 
 [ext_resource type="Script" uid="uid://bev1edp1gxdjf" path="res://components/potion_making/scripts/potion_making_panel.gd" id="1_l52fb"]
 [ext_resource type="Texture2D" uid="uid://416v2u11rdr1" path="res://assets/sprites/cauldron.png" id="2_8iso3"]
@@ -9,20 +9,25 @@
 [ext_resource type="Theme" uid="uid://1sotqrg2hncl" path="res://assets/themes/UIInventoryDetailsPanelThemeTitle.tres" id="4_weklc"]
 [ext_resource type="Script" uid="uid://buowfuvn5vngj" path="res://components/potion_making/states/potion_making_state.gd" id="5_rsfhy"]
 [ext_resource type="Script" uid="uid://bwxbq0njb10qg" path="res://components/potion_making/states/cook_button.gd" id="7_36yh7"]
+[ext_resource type="PackedScene" uid="uid://bqglq6gjsht8y" path="res://components/potion_details_panel/potion_details_panel.tscn" id="7_r34ww"]
+[ext_resource type="Script" uid="uid://damotdb05aiv1" path="res://components/potion_making/states/potion_slot.gd" id="9_r34ww"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsfhy"]
 atlas = ExtResource("3_weklc")
 region = Rect2(0, 48, 48, 16)
 
-[node name="PotionMaking" type="Control" node_paths=PackedStringArray("selection_state_machine", "ingredient_state_machine")]
+[node name="PotionMaking" type="Control" node_paths=PackedStringArray("selection_state_machine", "potion_result_slot", "potion_details_panel")]
 layout_mode = 3
-anchors_preset = 9
+anchor_right = 0.3828125
 anchor_bottom = 1.0
 grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_l52fb")
 selection_state_machine = NodePath("SelectionStateMachine")
-ingredient_state_machine = NodePath("IngredientStateMachine")
+cauldron_ingredients = null
+potion_result_slot = NodePath("v1/Cauldron/CenterContainer/PotionSlot/PotionSlot")
+potion_details_panel = NodePath("UIPotionDetailsPanel")
+metadata/_edit_use_anchors_ = true
 
 [node name="v1" type="VBoxContainer" parent="."]
 texture_filter = 1
@@ -34,6 +39,7 @@ grow_vertical = 2
 
 [node name="CookButton" parent="v1" node_paths=PackedStringArray("content") instance=ExtResource("3_3fny3")]
 layout_mode = 2
+size_flags_horizontal = 1
 size_flags_vertical = 3
 content = NodePath("TextureButton")
 
@@ -64,40 +70,77 @@ horizontal_alignment = 1
 
 [node name="h1" type="HBoxContainer" parent="v1"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 10
 
 [node name="CookingSlot1" type="CenterContainer" parent="v1/h1"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Slot1" parent="v1/h1/CookingSlot1" node_paths=PackedStringArray("content") instance=ExtResource("3_3fny3")]
-layout_mode = 2
-content = NodePath("Slot1")
-
-[node name="Slot1" parent="v1/h1/CookingSlot1/Slot1" instance=ExtResource("2_rsfhy")]
-layout_mode = 0
 
 [node name="CookingSlot2" type="CenterContainer" parent="v1/h1"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="Slot2" parent="v1/h1/CookingSlot2" node_paths=PackedStringArray("content") instance=ExtResource("3_3fny3")]
-layout_mode = 2
-content = NodePath("Slot2")
-
-[node name="Slot2" parent="v1/h1/CookingSlot2/Slot2" instance=ExtResource("2_rsfhy")]
-layout_mode = 0
 
 [node name="CookingSlot3" type="CenterContainer" parent="v1/h1"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Slot3" parent="v1/h1/CookingSlot3" node_paths=PackedStringArray("content") instance=ExtResource("3_3fny3")]
+[node name="Slot1" parent="v1/h1" node_paths=PackedStringArray("content") instance=ExtResource("3_3fny3")]
 layout_mode = 2
+size_flags_horizontal = 6
+content = NodePath("Slot1")
+
+[node name="Slot1" parent="v1/h1/Slot1" instance=ExtResource("2_rsfhy")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot2" parent="v1/h1" node_paths=PackedStringArray("content") instance=ExtResource("3_3fny3")]
+layout_mode = 2
+size_flags_horizontal = 6
+content = NodePath("Slot2")
+
+[node name="Slot2" parent="v1/h1/Slot2" instance=ExtResource("2_rsfhy")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slot3" parent="v1/h1" node_paths=PackedStringArray("content") instance=ExtResource("3_3fny3")]
+layout_mode = 2
+size_flags_horizontal = 6
 content = NodePath("Slot3")
 
-[node name="Slot3" parent="v1/h1/CookingSlot3/Slot3" instance=ExtResource("2_rsfhy")]
+[node name="Slot3" parent="v1/h1/Slot3" instance=ExtResource("2_rsfhy")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="Cauldron" type="TextureRect" parent="v1"]
 layout_mode = 2
@@ -119,33 +162,45 @@ content = NodePath("PotionSlot")
 
 [node name="PotionSlot" parent="v1/Cauldron/CenterContainer/PotionSlot" instance=ExtResource("2_rsfhy")]
 layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="UIPotionDetailsPanel" parent="." instance=ExtResource("7_r34ww")]
+visible = false
+layout_mode = 1
+offset_right = 706.0
 
 [node name="SelectionStateMachine" parent="." node_paths=PackedStringArray("starting_state") instance=ExtResource("3_8iso3")]
 starting_state = NodePath("Slot1")
 
 [node name="Slot1" type="Node" parent="SelectionStateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
 script = ExtResource("5_rsfhy")
-ui_element = NodePath("../../v1/h1/CookingSlot1/Slot1")
-connected_states = [null, NodePath("../CookButton"), NodePath("../Slot2"), NodePath("../PotionSlot")]
+ui_element = NodePath("../../v1/h1/Slot1")
+connected_states = [null, NodePath("../CookButton"), NodePath("../Slot2"), NodePath("../PotionSlot"), null]
 
 [node name="Slot2" type="Node" parent="SelectionStateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
 script = ExtResource("5_rsfhy")
-ui_element = NodePath("../../v1/h1/CookingSlot2/Slot2")
+ui_element = NodePath("../../v1/h1/Slot2")
 connected_states = [NodePath("../Slot1"), NodePath("../CookButton"), NodePath("../Slot3"), NodePath("../PotionSlot")]
 
 [node name="Slot3" type="Node" parent="SelectionStateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
 script = ExtResource("5_rsfhy")
-ui_element = NodePath("../../v1/h1/CookingSlot3/Slot3")
-connected_states = [NodePath("../Slot2"), NodePath("../CookButton"), null, NodePath("../PotionSlot")]
+ui_element = NodePath("../../v1/h1/Slot3")
+connected_states = [NodePath("../Slot2"), NodePath("../CookButton"), null, NodePath("../PotionSlot"), null]
 
-[node name="PotionSlot" type="Node" parent="SelectionStateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
-script = ExtResource("5_rsfhy")
+[node name="PotionSlot" type="Node" parent="SelectionStateMachine" node_paths=PackedStringArray("connected_states", "ui_element")]
+script = ExtResource("9_r34ww")
+connected_states = [NodePath("../Slot2"), NodePath("../Slot2")]
 ui_element = NodePath("../../v1/Cauldron/CenterContainer/PotionSlot")
-connected_states = [null, NodePath("../Slot2"), null, null]
 
 [node name="CookButton" type="Node" parent="SelectionStateMachine" node_paths=PackedStringArray("ui_element", "connected_states")]
 script = ExtResource("7_36yh7")
 ui_element = NodePath("../../v1/CookButton")
 connected_states = [NodePath("../Slot2")]
-
-[node name="IngredientStateMachine" parent="." instance=ExtResource("3_8iso3")]

@@ -44,7 +44,7 @@ func render_items() -> void:
 
 		slots[i].content.set_texture(inv_contents[inv_index].ingredient.details.sprite_texture) 
 		slots[i].content.set_qty_text(str(inv_contents[inv_index].get_qty()))
-		slots[i].content.set_stored_ingredient(inv_contents[inv_index].ingredient.details) ## 
+		slots[i].content.set_stored_item(inv_contents[inv_index].ingredient.details) ## 
 		slots[i].content.enable_icon()
 		slots[i].content.enable_qty_panel()
 
@@ -72,4 +72,10 @@ func clear_details_panel() -> void:
 
 func clear_slots_info() -> void:
 	for slot in slots:
-		slot.content.clear_stored_ingredient()
+		slot.content.clear_stored_item()
+
+func enable_sm() -> void:
+	state_machine.enable()
+
+func disable_sm() -> void:
+	state_machine.disable()

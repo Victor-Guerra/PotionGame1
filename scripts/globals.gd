@@ -1,6 +1,7 @@
 extends Node
 
 var DefaultIngredient: IngredientDetails = preload("res://resources/ingredient_types/default_ingredient.tres")
+var DefaultPotionTexture: CompressedTexture2D = preload("res://assets/sprites/potion.png")
 
 class ObjectTypes: ## Name subject to change
 	enum IngredientType {

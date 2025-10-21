@@ -19,6 +19,7 @@ func load_debug_contents() -> void:
 	self.inventory_content = [
 		InventoryItem.new(Ingredient.new(load("res://resources/ingredient_types/example_shroom1.tres"))),
 		InventoryItem.new(Ingredient.new(load("res://resources/ingredient_types/example_shroom2.tres"))),
+		InventoryItem.new(Ingredient.new(load("res://resources/ingredient_types/salammoniac.tres"))),
 		#Ingredient.new("ex_shroom2", effects2, "res://assets/sprites/shroom2.png"),
 	]
 
@@ -40,14 +41,14 @@ func add_to_inventory(item: Ingredient) -> void:
 	emit_signal("item_added")
 
 func remove_from_inventory(item: Ingredient) -> void:
-	print(self.inventory_content)
+	#print(self.inventory_content)
 	for invi in self.inventory_content:
 		if invi.ingredient.details.ingredient_name == item.details.ingredient_name:
 			invi.sub_one()
 
 			if invi.qty < 1:
 				self.inventory_content.erase(invi)
-				print(self.inventory_content)
+				#print(self.inventory_content)
 
 			emit_signal("item_removed")
 			return

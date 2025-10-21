@@ -17,8 +17,8 @@ class_name InventoryStateDefault
 func enter() -> void:
 	ui_element.enable_hand()
 
-	if ui_element.content.stored_ingredient:
-		parent.populate_details_panel(ui_element.content.stored_ingredient)
+	if ui_element.content.stored_item:
+		parent.populate_details_panel(ui_element.content.stored_item)
 	else:
 		parent.clear_details_panel()
 	
@@ -35,4 +35,11 @@ func process_input(event: InputEvent) -> State:
 	elif event.is_action_pressed("menu_up"):
 		return states_dict["up"]
 		
+	return null
+
+func process_unhandled_input(event: InputEvent) -> State:
+	if event.is_action_pressed("menu_enter"):
+		GlobalSignals.add_ingredient.emit(ui_element.content.stored_item)
+		get_viewport().set_input_as_handled()
+
 	return null
