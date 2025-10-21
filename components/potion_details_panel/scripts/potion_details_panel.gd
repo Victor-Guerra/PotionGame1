@@ -11,10 +11,6 @@ class_name UIPotionDetailsPanel
 
 @export var effect_labels: Array[RichTextLabel]
 
-@export var effect1_label: RichTextLabel
-@export var effect2_label: RichTextLabel
-@export var effect3_label: RichTextLabel
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -29,10 +25,6 @@ func populate_details(details: PotionDetails, texture: Texture2D = Globals.Defau
 	value_label.text = str(details.value) + "G"
 
 	_populate_effects(details.effects)
-
-	#effect1_label.text = Globals.ObjectTypes.PotionEffect.find_key(details.effects[0])
-	#effect2_label.text = Globals.ObjectTypes.PotionEffect.find_key(details.effects[1])
-	#effect3_label.text = Globals.ObjectTypes.PotionEffect.find_key(details.effects[2])
 
 
 func _populate_effects(effect_list: Array[Globals.ObjectTypes.PotionEffect]) -> void:

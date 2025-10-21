@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dh1q0xqfoq587"]
+[gd_scene load_steps=6 format=3 uid="uid://dh1q0xqfoq587"]
 
 [ext_resource type="Script" uid="uid://c1jjk1lfgv5nd" path="res://components/main_screen/main.gd" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://d1fas8wcux6ym" path="res://components/potion_making/potion_making_panel.tscn" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://clisi50167txh" path="res://components/inventory/inventory.tscn" id="3_1bvp3"]
+[ext_resource type="AudioStream" uid="uid://ca0mwp4143tah" path="res://assets/music/potion_song1.wav" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dltyu7rmdsse" path="res://scripts/main_music_player.gd" id="5_lquwl"]
 
 [node name="Main" type="Control" node_paths=PackedStringArray("inventory_panel", "potion_making_panel")]
 layout_mode = 3
@@ -31,3 +33,10 @@ offset_bottom = 100.00003
 scale = Vector2(0.73333335, 0.7487923)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_1bvp3")
+volume_db = -13.64
+autoplay = true
+bus = &"Music"
+script = ExtResource("5_lquwl")
