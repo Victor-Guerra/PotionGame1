@@ -1,10 +1,14 @@
 extends Resource
 class_name PotionDetails
 
+@export var potion_name: String
+
 @export var potency: float
 @export var strength: float
 @export var stability: float
 @export var value: int
+
+@export var potion_color: Color
 
 @export var effects: Array[Globals.ObjectTypes.PotionEffect]
 @export var hidden_effects: Array[Globals.ObjectTypes.PotionEffect]
@@ -16,6 +20,8 @@ func _init(ing1: IngredientDetails = Globals.DefaultIngredient,
 		   ing3: IngredientDetails = Globals.DefaultIngredient):
 	create_potion(ing1, ing2, ing3)
 	derive_effects(ing1, ing2, ing3)
+	generate_name()
+	generate_potion_color()
 
 func create_potion(ing1: IngredientDetails, 
 				   ing2: IngredientDetails, 
@@ -121,6 +127,34 @@ func substract_arrays(arrs: Array[Array]) -> Array[Globals.ObjectTypes.PotionEff
 				repeated.append(i)
 	
 	return result
+
+func generate_name() -> void:
+	var new_name: PackedStringArray = []
+
+	# Add the strength to the name
+	if strength <= 0.2:
+		new_name.append("Weak")
+	elif strength <= 0.4:
+		new_name.append("Regular")
+	elif strength <= 0.6:
+		new_name.append("Strong")
+	elif strength <= 0.8:
+		new_name.append("Impressive")
+	else: 
+		new_name.append("Mythical")
+
+	# Add a word for potion
+	var words = ["Potion", "Brew", "Tincture", "Mixture", "Infusion", "Draught", "Elixir"]
+	new_name.append(words.pick_random())
+	new_name.append("of")
+
+	# Add one of the effects to the title
+	new_name.append(Globals.ObjectTypes.PotionEffect.find_key(effects[0]))
+
+	potion_name = " ".join(new_name)
+
+func generate_potion_color() -> void:
+	potion_color = Color.from_hsv(randf(), randf(), randf(), 1.0)
 
 func pprint() -> void:
 	print("***********")

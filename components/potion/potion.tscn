@@ -3,4 +3,5 @@
 [ext_resource type="Script" uid="uid://dj3r0bar68vjf" path="res://components/potion/PotionDetails.gd" id="1_ychuy"]
 
 [node name="Potion" type="Node2D"]
+position = Vector2(-1, 0)
 script = ExtResource("1_ychuy")

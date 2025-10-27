@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://25u15xar3imy"]
+
+[ext_resource type="FontFile" uid="uid://da5dwr0us0asw" path="res://assets/fonts/ThaleahFat.ttf" id="1_w6w4s"]
+
+[resource]
+Button/colors/font_color = Color(0.30588236, 0, 0.6431373, 1)
+Button/font_sizes/font_size = 38
+Button/fonts/font = ExtResource("1_w6w4s")
+RichTextLabel/colors/default_color = Color(0.30761844, 0.0011557156, 0.64306176, 1)
+RichTextLabel/font_sizes/normal_font_size = 36
+RichTextLabel/fonts/normal_font = ExtResource("1_w6w4s")

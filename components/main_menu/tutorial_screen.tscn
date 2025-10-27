@@ -1,0 +1,450 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj4rquhuxtinn"]
+
+[ext_resource type="Theme" uid="uid://db28m3w1x0qeb" path="res://assets/themes/main_menu_title.tres" id="1_vddu5"]
+[ext_resource type="Texture2D" uid="uid://c1dd1vi5ulige" path="res://assets/sprites/atlases/keyboard_key_texture.tres" id="2_vtkti"]
+[ext_resource type="Theme" uid="uid://dvbu2tpf5xrsi" path="res://assets/themes/UIInventoryDetailsPanelThemeBody.tres" id="3_sb73j"]
+[ext_resource type="Theme" uid="uid://25u15xar3imy" path="res://assets/themes/main_menu_buttons.tres" id="3_utii7"]
+[ext_resource type="Texture2D" uid="uid://dvheg76vrw0vp" path="res://assets/sprites/hand.png" id="4_utii7"]
+[ext_resource type="Texture2D" uid="uid://basprvbesa412" path="res://assets/sprites/atlases/button_atlas.tres" id="6_utii7"]
+
+[node name="TutorialScreen" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07058824, 0.07058824, 0.07058824, 1)
+
+[node name="MainContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="HFlowContainer" parent="ColorRect/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+alignment = 1
+
+[node name="TutorialTitle" type="RichTextLabel" parent="ColorRect/MainContainer/TitleContainer"]
+layout_mode = 2
+theme = ExtResource("1_vddu5")
+text = "Tutorial (?)"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MainContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Column1" type="VBoxContainer" parent="ColorRect/MainContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="wasdInstructions" type="HFlowContainer" parent="ColorRect/MainContainer/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Label" type="Label" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+text = " "
+
+[node name="KeyW" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("2_vtkti")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="W" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer/KeyW"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "W"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = " "
+
+[node name="KeyA" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("2_vtkti")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="A" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer/KeyA"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "A"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyS" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_vtkti")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="S" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer/KeyS"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "S"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyD" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("2_vtkti")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="D" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/GridContainer/KeyD"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "D"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HFlowContainer" type="HFlowContainer" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="TutorialDesc1" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_sb73j")
+text = "Use WASD to move the"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="Cursor" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("4_utii7")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TutorialDesc2" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column1/wasdInstructions/HFlowContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_sb73j")
+text = "cursor."
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="EnterInstructions" type="HFlowContainer" parent="ColorRect/MainContainer/HBoxContainer/Column1"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="KeyEnter" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column1/EnterInstructions"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("6_utii7")
+stretch_mode = 5
+
+[node name="Enter" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column1/EnterInstructions/KeyEnter"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -49.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "Enter"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialDesc3" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column1/EnterInstructions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_sb73j")
+text = "Press Enter to make selections."
+fit_content = true
+vertical_alignment = 1
+
+[node name="Column2" type="VBoxContainer" parent="ColorRect/MainContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="directionKeys" type="HFlowContainer" parent="ColorRect/MainContainer/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="GridContainer" type="GridContainer" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 3
+
+[node name="Label" type="Label" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = " "
+
+[node name="KeyUp" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("2_vtkti")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="UP" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer/KeyUp"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "↑"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = " "
+
+[node name="KeyLeft" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("2_vtkti")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Left" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer/KeyLeft"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -21.5
+offset_right = 20.0
+offset_bottom = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "←"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyDown" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("2_vtkti")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Down" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer/KeyDown"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "↓"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyRight" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+texture = ExtResource("2_vtkti")
+stretch_mode = 3
+
+[node name="Right" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys/GridContainer/KeyRight"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "→"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialDesc2" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_sb73j")
+text = "Use the direction keys to select an ingredient in the"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="TutorialDesc3" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/directionKeys"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("3_sb73j")
+text = "debug selector."
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="EnterInstructions" type="HFlowContainer" parent="ColorRect/MainContainer/HBoxContainer/Column2"]
+layout_mode = 2
+size_flags_vertical = 6
+
+[node name="KeyMinus" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column2/EnterInstructions"]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_vtkti")
+stretch_mode = 5
+
+[node name="Minus" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/EnterInstructions/KeyMinus"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "-"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KeyPlus" type="TextureRect" parent="ColorRect/MainContainer/HBoxContainer/Column2/EnterInstructions"]
+custom_minimum_size = Vector2(25, 0)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_vtkti")
+stretch_mode = 5
+
+[node name="Plus" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/EnterInstructions/KeyPlus"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -49.5
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_utii7")
+text = "+"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TutorialDesc3" type="RichTextLabel" parent="ColorRect/MainContainer/HBoxContainer/Column2/EnterInstructions"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme = ExtResource("3_sb73j")
+text = "Press - or + to add/remove an item from the inventory."
+fit_content = true
+vertical_alignment = 1

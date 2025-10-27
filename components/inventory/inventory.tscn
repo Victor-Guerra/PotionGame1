@@ -271,13 +271,13 @@ texture_hover = SubResource("AtlasTexture_0dlhe")
 
 [node name="Debug" parent="." instance=ExtResource("6_otuy5")]
 layout_mode = 1
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_right = 0.4960022
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 0.0
 offset_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
 inventory_obj = ExtResource("2_q8l1h")
 avail_ingredients = ExtResource("7_0dlhe")
 

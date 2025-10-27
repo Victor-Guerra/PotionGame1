@@ -1,0 +1,148 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhrqofaxa858c"]
+
+[ext_resource type="Theme" uid="uid://db28m3w1x0qeb" path="res://assets/themes/main_menu_title.tres" id="1_eqqdt"]
+[ext_resource type="Script" uid="uid://cfmn88f2iu68h" path="res://components/main_menu/main_menu_screen.gd" id="1_r2o6x"]
+[ext_resource type="Texture2D" uid="uid://basprvbesa412" path="res://assets/sprites/atlases/button_atlas.tres" id="2_cebf0"]
+[ext_resource type="Theme" uid="uid://25u15xar3imy" path="res://assets/themes/main_menu_buttons.tres" id="3_r2o6x"]
+[ext_resource type="Texture2D" uid="uid://416v2u11rdr1" path="res://assets/sprites/cauldron.png" id="3_y27jc"]
+[ext_resource type="PackedScene" uid="uid://bj4rquhuxtinn" path="res://components/main_menu/tutorial_screen.tscn" id="6_mkabp"]
+[ext_resource type="Script" uid="uid://otv2bu8v4buf" path="res://components/state_machine/state_machine.gd" id="6_qtijm"]
+[ext_resource type="Script" uid="uid://boxj8k2c4gy13" path="res://components/main_menu/states/main_state.gd" id="7_mkabp"]
+[ext_resource type="AudioStream" uid="uid://c8cleg0d3otkf" path="res://assets/music/potion_menu.wav" id="7_reiax"]
+[ext_resource type="Script" uid="uid://doqedgoihs83h" path="res://components/main_menu/states/in_tutorial.gd" id="8_utryx"]
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("sm", "tutorial_state")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r2o6x")
+sm = NodePath("StateMachine")
+tutorial_state = NodePath("StateMachine/InTutorial")
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06879827, 0.06879828, 0.06879828, 1)
+
+[node name="v1" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleContainer" type="CenterContainer" parent="v1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="v1/TitleContainer"]
+layout_mode = 2
+theme = ExtResource("1_eqqdt")
+text = "Potion Making Simulator Concept AKA. Shitty Ass Game #2"
+fit_content = true
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="h1" type="HBoxContainer" parent="v1"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MenuOptions" type="VBoxContainer" parent="v1/h1"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="SBBG" type="TextureRect" parent="v1/h1/MenuOptions"]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_cebf0")
+
+[node name="StartButton" type="Button" parent="v1/h1/MenuOptions/SBBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_r2o6x")
+text = "Start"
+flat = true
+
+[node name="TBBG" type="TextureRect" parent="v1/h1/MenuOptions"]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_cebf0")
+
+[node name="TutorialButton" type="Button" parent="v1/h1/MenuOptions/TBBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_r2o6x")
+text = "Tutorial"
+flat = true
+
+[node name="QBBG" type="TextureRect" parent="v1/h1/MenuOptions"]
+custom_minimum_size = Vector2(300, 75)
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_cebf0")
+
+[node name="QuitButton" type="Button" parent="v1/h1/MenuOptions/QBBG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_r2o6x")
+text = "Quit"
+flat = true
+
+[node name="Pot" type="TextureRect" parent="v1/h1"]
+layout_mode = 2
+size_flags_horizontal = 6
+texture = ExtResource("3_y27jc")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TutorialScreen" parent="." instance=ExtResource("6_mkabp")]
+visible = false
+layout_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_reiax")
+autoplay = true
+bus = &"Music"
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("6_qtijm")
+starting_state = NodePath("MenuState")
+metadata/_custom_type_script = "uid://otv2bu8v4buf"
+
+[node name="MenuState" type="Node" parent="StateMachine" node_paths=PackedStringArray("tutorial_state", "tutorial_button")]
+script = ExtResource("7_mkabp")
+tutorial_state = NodePath("../InTutorial")
+tutorial_button = NodePath("../../v1/h1/MenuOptions/TBBG/TutorialButton")
+metadata/_custom_type_script = "uid://03y1vnv430vn"
+
+[node name="InTutorial" type="Node" parent="StateMachine" node_paths=PackedStringArray("tutorial_screen", "main_state")]
+script = ExtResource("8_utryx")
+tutorial_screen = NodePath("../../TutorialScreen")
+main_state = NodePath("../MenuState")
+metadata/_custom_type_script = "uid://03y1vnv430vn"

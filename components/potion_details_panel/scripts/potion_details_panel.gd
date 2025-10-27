@@ -2,7 +2,7 @@ extends Control
 class_name UIPotionDetailsPanel
 
 @export var potion_title: RichTextLabel
-@export var potion_icon: InventorySlot
+@export var potion_icon: PotionIcon
 
 @export var potency_label: RichTextLabel
 @export var strength_label: RichTextLabel
@@ -15,9 +15,9 @@ class_name UIPotionDetailsPanel
 func _ready() -> void:
 	pass # Replace with function body.
 
-func populate_details(details: PotionDetails, texture: Texture2D = Globals.DefaultPotionTexture) -> void:
-	potion_title.text = "New Potion"
-	potion_icon.set_texture(texture)
+func populate_details(details: PotionDetails) -> void:
+	potion_title.text = details.potion_name
+	potion_icon.populate_icons(details.potion_color)
 
 	potency_label.text = "%.3f" % details.potency
 	strength_label.text = ("%.1f" % (details.strength * 100)) + "%"

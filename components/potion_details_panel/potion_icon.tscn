@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlq7ucjehage3"]
+
+[ext_resource type="Texture2D" uid="uid://cgqeto54qamp" path="res://assets/sprites/round_vial2.png" id="1_2h801"]
+[ext_resource type="Script" uid="uid://c85bdx6o5ju84" path="res://components/potion_details_panel/scripts/potion_icon.gd" id="1_x2cjb"]
+[ext_resource type="Texture2D" uid="uid://cg4ubnbp287pl" path="res://assets/sprites/round_vial_content.png" id="2_x2cjb"]
+
+[node name="PotionIcon" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_x2cjb")
+
+[node name="Foreground" type="Sprite2D" parent="."]
+texture = ExtResource("1_2h801")
+
+[node name="Background" type="Sprite2D" parent="."]
+self_modulate = Color(0.654902, 0.5254902, 0.23921569, 1)
+z_index = -1
+texture = ExtResource("2_x2cjb")
