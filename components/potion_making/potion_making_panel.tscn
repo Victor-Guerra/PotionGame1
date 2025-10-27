@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://d1fas8wcux6ym"]
+[gd_scene load_steps=14 format=3 uid="uid://d1fas8wcux6ym"]
 
 [ext_resource type="Script" uid="uid://bev1edp1gxdjf" path="res://components/potion_making/scripts/potion_making_panel.gd" id="1_l52fb"]
 [ext_resource type="Texture2D" uid="uid://416v2u11rdr1" path="res://assets/sprites/cauldron.png" id="2_8iso3"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://da41w5pmpxhjc" path="res://assets/sprites/generic_tiles.png" id="3_weklc"]
 [ext_resource type="Theme" uid="uid://1sotqrg2hncl" path="res://assets/themes/UIInventoryDetailsPanelThemeTitle.tres" id="4_weklc"]
 [ext_resource type="Script" uid="uid://buowfuvn5vngj" path="res://components/potion_making/states/potion_making_state.gd" id="5_rsfhy"]
+[ext_resource type="PackedScene" uid="uid://dlq7ucjehage3" path="res://components/potion_details_panel/potion_icon.tscn" id="7_4x6fp"]
 [ext_resource type="Script" uid="uid://bwxbq0njb10qg" path="res://components/potion_making/states/cook_button.gd" id="7_36yh7"]
 [ext_resource type="PackedScene" uid="uid://bqglq6gjsht8y" path="res://components/potion_details_panel/potion_details_panel.tscn" id="7_r34ww"]
 [ext_resource type="Script" uid="uid://damotdb05aiv1" path="res://components/potion_making/states/potion_slot.gd" id="9_r34ww"]
@@ -16,7 +17,7 @@
 atlas = ExtResource("3_weklc")
 region = Rect2(0, 48, 48, 16)
 
-[node name="PotionMaking" type="Control" node_paths=PackedStringArray("selection_state_machine", "potion_result_slot", "potion_details_panel")]
+[node name="PotionMaking" type="Control" node_paths=PackedStringArray("selection_state_machine", "potion_result_slot", "potion_result_icon", "potion_details_panel")]
 layout_mode = 3
 anchor_right = 0.3828125
 anchor_bottom = 1.0
@@ -24,8 +25,8 @@ grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_l52fb")
 selection_state_machine = NodePath("SelectionStateMachine")
-cauldron_ingredients = null
 potion_result_slot = NodePath("v1/Cauldron/CenterContainer/PotionSlot/PotionSlot")
+potion_result_icon = NodePath("v1/Cauldron/CenterContainer/PotionSlot/PotionIcon")
 potion_details_panel = NodePath("UIPotionDetailsPanel")
 metadata/_edit_use_anchors_ = true
 
@@ -171,6 +172,11 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+
+[node name="PotionIcon" parent="v1/Cauldron/CenterContainer/PotionSlot" instance=ExtResource("7_4x6fp")]
+visible = false
+z_index = 2
+layout_mode = 1
 
 [node name="UIPotionDetailsPanel" parent="." instance=ExtResource("7_r34ww")]
 visible = false

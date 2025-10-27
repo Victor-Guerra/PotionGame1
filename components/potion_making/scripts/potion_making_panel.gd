@@ -10,6 +10,7 @@ class_name UIPotionMakingPanel
 }
 
 @export var potion_result_slot: InventorySlot
+@export var potion_result_icon: PotionIcon
 @export var potion_details_panel: UIPotionDetailsPanel
 
 # Called when the node enters the scene tree for the first time.
@@ -66,11 +67,12 @@ func render_potion_slot() -> void:
 
 func clear_potion_slot() -> void:
 	potion_result_slot.clear_stored_item()
-	potion_result_slot.clear_texture()
+	potion_result_icon.visible = false
 
 func set_potion_slot_potion(potion: PotionDetails) -> void:
 	potion_result_slot.set_stored_item(potion)
-	potion_result_slot.set_texture(Globals.DefaultPotionTexture)
+	potion_result_icon.populate_icons(potion.potion_color)
+	potion_result_icon.visible = true
 
 func _enable_potion_details_panel() -> void:
 	if potion_result_slot.stored_item:
