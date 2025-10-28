@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://c75k8dwn6cvl2"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_ll5mv"]
+[ext_resource type="Texture2D" uid="uid://bpcpulrgfj58u" path="res://assets/sprites/ingredient_sprites/example_flower.png" id="2_aiqqc"]
+
+[resource]
+script = ExtResource("1_ll5mv")
+ingredient_name = "Seers' Sage"
+ingredient_type = 1
+base_potency = 1.7
+base_value = 17
+base_stability = 1.2
+effects = Array[int]([42, 0, 13])
+rarity = 1
+sprite_texture = ExtResource("2_aiqqc")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

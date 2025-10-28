@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://bys3snoept11t"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_q0jgu"]
+[ext_resource type="Texture2D" uid="uid://b3vqadpjf3gg5" path="res://assets/sprites/ingredient_sprites/herb1.png" id="2_1lqs0"]
+
+[resource]
+script = ExtResource("1_q0jgu")
+ingredient_name = "Green Algae"
+ingredient_type = 1
+base_potency = 1.5
+base_value = 10
+base_stability = 1.65
+effects = Array[int]([24, 36, 14])
+rarity = 1
+sprite_texture = ExtResource("2_1lqs0")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

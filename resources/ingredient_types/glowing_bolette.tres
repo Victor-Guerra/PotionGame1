@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://cp2m25eu0vul8"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_ih8rr"]
+[ext_resource type="Texture2D" uid="uid://3e5klkwhyhks" path="res://assets/sprites/ingredient_sprites/h_tessulatus.png" id="2_it006"]
+
+[resource]
+script = ExtResource("1_ih8rr")
+ingredient_name = "Glowing Bolette"
+base_potency = 1.74
+base_value = 25
+base_stability = 1.0
+effects = Array[int]([31, 20, 10])
+rarity = 2
+sprite_texture = ExtResource("2_it006")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

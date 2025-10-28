@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://co8g01uabh42"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_hk2i4"]
+[ext_resource type="Texture2D" uid="uid://crfi02m7mkc5k" path="res://assets/sprites/ingredient_sprites/water_vial.png" id="2_geslc"]
+
+[resource]
+script = ExtResource("1_hk2i4")
+ingredient_name = "Cutting Oil"
+ingredient_type = 5
+base_potency = 0.75
+base_value = 9
+base_stability = 1.1
+effects = Array[int]([32, 28, 1])
+rarity = 1
+sprite_texture = ExtResource("2_geslc")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

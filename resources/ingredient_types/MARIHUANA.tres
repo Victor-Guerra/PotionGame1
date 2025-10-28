@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://b44vad6kon1e7"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_msyto"]
+[ext_resource type="Texture2D" uid="uid://b3vqadpjf3gg5" path="res://assets/sprites/ingredient_sprites/herb1.png" id="2_m2dw4"]
+
+[resource]
+script = ExtResource("1_msyto")
+ingredient_name = "Jesters' Weed"
+ingredient_type = 1
+base_potency = 1.4
+base_value = 15
+base_stability = 1.0
+effects = Array[int]([0, 8, 41])
+rarity = 1
+sprite_texture = ExtResource("2_m2dw4")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

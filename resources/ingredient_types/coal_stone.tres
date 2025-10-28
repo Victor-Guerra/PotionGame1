@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://bilf5kg7frmj0"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_pupxu"]
+[ext_resource type="Texture2D" uid="uid://dwo5dib6k1bsj" path="res://assets/sprites/ingredient_sprites/iron_filings.png" id="2_4m7k6"]
+
+[resource]
+script = ExtResource("1_pupxu")
+ingredient_name = "Coalstone"
+ingredient_type = 3
+base_potency = 0.5
+base_value = 5
+base_stability = 2.12
+effects = Array[int]([34, 19, 37])
+sprite_texture = ExtResource("2_4m7k6")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

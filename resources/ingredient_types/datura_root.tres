@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://c50euytcqk6c1"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_e7rw6"]
+[ext_resource type="Texture2D" uid="uid://bpcpulrgfj58u" path="res://assets/sprites/ingredient_sprites/example_flower.png" id="2_61cjt"]
+
+[resource]
+script = ExtResource("1_e7rw6")
+ingredient_name = "Evening Bloom Root"
+base_potency = 2.0
+base_value = 15
+base_stability = 0.1
+effects = Array[int]([29, 12, 15])
+rarity = 1
+sprite_texture = ExtResource("2_61cjt")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

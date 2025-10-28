@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://dr1dpy50y8prs"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_db1mu"]
+[ext_resource type="Texture2D" uid="uid://bpcpulrgfj58u" path="res://assets/sprites/ingredient_sprites/example_flower.png" id="2_4rric"]
+
+[resource]
+script = ExtResource("1_db1mu")
+ingredient_name = "Evening Bloom Datura"
+ingredient_type = 1
+base_potency = 2.0
+base_value = 12
+base_stability = 0.2
+effects = Array[int]([25, 6, 42])
+rarity = 1
+sprite_texture = ExtResource("2_4rric")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

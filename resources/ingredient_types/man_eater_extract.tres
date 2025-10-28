@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://4s3acsj4cjby"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_nwego"]
+[ext_resource type="Texture2D" uid="uid://crfi02m7mkc5k" path="res://assets/sprites/ingredient_sprites/water_vial.png" id="2_7muf8"]
+
+[resource]
+script = ExtResource("1_nwego")
+ingredient_name = "Man Eater Extract"
+ingredient_type = 5
+base_potency = 1.6
+base_value = 34
+base_stability = 1.8
+effects = Array[int]([35, 38, 33])
+rarity = 2
+sprite_texture = ExtResource("2_7muf8")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

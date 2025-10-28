@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://dc8gs62tvf8a0"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_b0fqd"]
+[ext_resource type="Texture2D" uid="uid://b3vqadpjf3gg5" path="res://assets/sprites/ingredient_sprites/herb1.png" id="2_kg81p"]
+
+[resource]
+script = ExtResource("1_b0fqd")
+ingredient_name = "Red Algae"
+ingredient_type = 1
+base_potency = 1.5
+base_value = 20
+base_stability = 2.0
+effects = Array[int]([23, 22, 5])
+rarity = 1
+sprite_texture = ExtResource("2_kg81p")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

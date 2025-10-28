@@ -63,6 +63,9 @@ class ObjectTypes: ## Name subject to change
 		Cleansing,
 		BlockMyasma,
 		AntiFlame,
+		DetectSpirits,
+		GiftedVision,
+		Myasma
 
 	}
 	

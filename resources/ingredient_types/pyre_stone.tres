@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://4wcfw7wic05m"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_m7tye"]
+[ext_resource type="Texture2D" uid="uid://dxa42jnhvwkej" path="res://assets/sprites/ingredient_sprites/shitty_pyrite.png" id="2_knekp"]
+
+[resource]
+script = ExtResource("1_m7tye")
+ingredient_name = "Pyre Stone"
+ingredient_type = 3
+base_potency = 1.2
+base_value = 6
+base_stability = 1.85
+effects = Array[int]([34, 30, 27])
+sprite_texture = ExtResource("2_knekp")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://ltfyxghbix4g"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_7uovo"]
+[ext_resource type="Texture2D" uid="uid://b3vqadpjf3gg5" path="res://assets/sprites/ingredient_sprites/herb1.png" id="2_b220w"]
+
+[resource]
+script = ExtResource("1_7uovo")
+ingredient_name = "Brown Algae"
+ingredient_type = 1
+base_potency = 1.0
+base_value = 7
+base_stability = 2.0
+effects = Array[int]([32, 6, 19])
+sprite_texture = ExtResource("2_b220w")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

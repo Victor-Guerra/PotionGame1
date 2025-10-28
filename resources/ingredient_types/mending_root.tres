@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://b6fkgvfmrr4ky"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_yxutm"]
+[ext_resource type="Texture2D" uid="uid://bpcpulrgfj58u" path="res://assets/sprites/ingredient_sprites/example_flower.png" id="2_7uh6f"]
+
+[resource]
+script = ExtResource("1_yxutm")
+ingredient_name = "Mend Root"
+ingredient_type = 2
+base_potency = 1.76
+base_value = 22
+base_stability = 2.12
+effects = Array[int]([26, 7, 40])
+rarity = 2
+sprite_texture = ExtResource("2_7uh6f")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

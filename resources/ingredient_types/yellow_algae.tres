@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://dr1njt7yty8xu"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_b23uq"]
+[ext_resource type="Texture2D" uid="uid://b3vqadpjf3gg5" path="res://assets/sprites/ingredient_sprites/herb1.png" id="2_5qv6s"]
+
+[resource]
+script = ExtResource("1_b23uq")
+ingredient_name = "Yellow Algae"
+ingredient_type = 1
+base_potency = 1.31
+base_value = 13
+base_stability = 1.78
+effects = Array[int]([13, 8, 20])
+rarity = 1
+sprite_texture = ExtResource("2_5qv6s")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

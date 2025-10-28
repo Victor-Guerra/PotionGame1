@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://hh1y68mvcc6f"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_ne2jk"]
+[ext_resource type="Texture2D" uid="uid://cqdfvv0ey382p" path="res://assets/sprites/ingredient_sprites/shroom2.png" id="2_0ffjr"]
+
+[resource]
+script = ExtResource("1_ne2jk")
+ingredient_name = "Pond Cap"
+base_potency = 1.8199999999999998
+base_value = 31
+base_stability = 0.55
+effects = Array[int]([24, 15, 4])
+rarity = 2
+sprite_texture = ExtResource("2_0ffjr")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

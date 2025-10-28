@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://b6j8gk7l46np0"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_cuoif"]
+[ext_resource type="Texture2D" uid="uid://bpcpulrgfj58u" path="res://assets/sprites/ingredient_sprites/example_flower.png" id="2_y4cjk"]
+
+[resource]
+script = ExtResource("1_cuoif")
+ingredient_name = "Evening Bloom Seed"
+ingredient_type = 1
+base_potency = 1.95
+base_value = 12
+base_stability = 0.9
+effects = Array[int]([41, 42, 1])
+rarity = 1
+sprite_texture = ExtResource("2_y4cjk")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"

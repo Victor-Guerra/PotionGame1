@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="IngredientDetails" load_steps=3 format=3 uid="uid://gjpec2fn28g8"]
+
+[ext_resource type="Script" uid="uid://dtp2yp0lr4grm" path="res://components/ingredient/ingredient_resource.gd" id="1_ygowh"]
+[ext_resource type="Texture2D" uid="uid://dwo5dib6k1bsj" path="res://assets/sprites/ingredient_sprites/iron_filings.png" id="2_5r6dn"]
+
+[resource]
+script = ExtResource("1_ygowh")
+ingredient_name = "Lead"
+ingredient_type = 4
+base_potency = 0.8
+base_value = 30
+base_stability = 1.1
+effects = Array[int]([41, 2, 6])
+rarity = 2
+sprite_texture = ExtResource("2_5r6dn")
+metadata/_custom_type_script = "uid://dtp2yp0lr4grm"
